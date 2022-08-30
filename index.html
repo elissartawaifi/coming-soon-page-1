@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+
+
+    <title>Bible Society in Syria</title>
+
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap');
+       :root{
+
+        font-size: 3vw;
+        font-family: 'Lato', sans-serif;
+       }
+
+       *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+       }
+
+
+        body{
+
+            background-image: linear-gradient(to bottom, #1a355c, #174179, #124e96, #0d5ab5, #1066d4);
+            background-repeat: no-repeat;
+           background-attachment: fixed;
+    
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hide{
+            opacity: 0;
+        }
+
+        h1,h3,p,a{
+        
+            animation: fadeInAnimation ease 2s;
+            animation-iteration-count: 1;
+
+        }
+
+        h1{
+            animation-delay: 0.5s;
+        }
+
+        p{
+            animation-delay: 1s;
+        }
+
+        a{
+        animation-delay: 1.5s;
+        
+        }
+
+
+        @keyframes fadeInAnimation {
+            from {
+        opacity: 0;
+        transform: translateY(80%);
+      
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+        h3{
+           
+            font-weight: 700;
+            margin-top: 35vw;
+            color: white;
+            font-size: 1.5rem;
+            
+        }
+
+        p{
+
+            margin-top: 2vw;
+            color: white;
+            font-size: 0.8 rem;
+        
+        }
+
+        h1{
+            margin-top: 10vw;
+            color: white;
+           font-size: 2rem;
+             font-weight: 700;
+        }
+
+      
+      
+
+        .smlinks {
+            margin-top: 10vw;
+            width: 60%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        img{
+           
+            width:10vw;
+        }
+
+ 
+  
+        @media screen and (min-width:600px) {
+        
+        h3{ margin-top: 20vw;}
+
+        p{ margin-top: 2vw;}
+
+        h1{ margin-top: 5vw; }
+
+        .smlinks {margin-top: 5vw;}
+         a:hover img{
+        transform: translateY(-10px);
+         cursor: pointer;
+        }
+
+        
+        img{
+            
+            max-width: 80px;
+            transition: 0.5s ease;
+         
+        }
+        }
+
+     
+
+        @media screen and (min-width:900px) {
+        
+            h3{ margin-top: 10vw;}
+
+        }
+
+    </style>
+</head>
+<body>
+    <h3 class="hide">Bible Society in Syria</h3>
+    <h1 class="hide">WE'RE COMING SOON!</h1>
+    <p class="hide">follow us on social media <br></p>
+    <div class="smlinks">
+        <a href="https://www.facebook.com/The-Bible-Society-in-Syria-105919334352666/" target="_Blank" class="link hide" ><img src="coming-soon-images/Facebook.svg" alt="Facebook icon link"></a>
+        <a href="https://www.instagram.com/the_bible_society_in_syria/" target="_Blank" class="link hide"><img src="coming-soon-images/Instagram.svg" alt="Instagram icon link"></a>
+        <a href="https://youtube.com/channel/UC8AHHuaN3Xa92Gz-o0iSW7g" target="_Blank" class="link hide"><img src="coming-soon-images/YouTube 2.svg" alt="Youtube icon link"></a>
+    </div>
+</body>
+
+<script>
+    const h3 = document.querySelector('h3');
+    const h1 = document.querySelector('h1');
+    const p = document.querySelector('p');
+    const links= document.querySelectorAll('a');
+
+h3.addEventListener("animationend",h3fun);
+h1.addEventListener("animationend",h1fun);
+p.addEventListener("animationend",pfun);
+links.forEach(link => {
+    link.addEventListener("animationend",linkfun);
+});
+
+
+
+function h3fun() {
+    console.log("hello ")
+ h3.classList.remove('hide');
+}
+
+function h1fun() {
+ h1.classList.remove('hide');
+}
+
+function pfun() {
+ p.classList.remove('hide');
+}
+
+function linkfun() {
+ links.forEach(link =>{
+    link.classList.remove('hide');
+ })
+   
+
+}
+
+</script>
+</html>
